@@ -449,7 +449,7 @@ getTumorLR_SC <- function(sc_data,sc_count,sc_metadata,ligand_receptor_DB=NULL){
     colnames(cell_type_cluster2)[2] <- c("target")
     SingleCellSignalR2 <- merge(SingleCellSignalR1,cell_type_cluster1,by='source')
     SingleCellSignalR2 <- merge(SingleCellSignalR2,cell_type_cluster2,by='target')
-    SingleCellSignalR3 <- SingleCellSignalR2[,c("cell_type_final.x","ligand","receptor","cell_type_final.y","SingleCellSignalR[, \"SingleCellSignalR_LRscore\"]")]
+    SingleCellSignalR3 <- SingleCellSignalR2[,c("cell_type_final.x","ligand","receptor","cell_type_final.y","SingleCellSignalR....SingleCellSignalR_LRscore..")]
     colnames(SingleCellSignalR3) <- c("source","ligand","receptor","target","LRscore")
     SingleCellSignalR3$interaction_name <- paste0(SingleCellSignalR3$ligand,"_",SingleCellSignalR3$receptor)
     SingleCellSignalR3 <- merge(SingleCellSignalR3,db,by="interaction_name")
