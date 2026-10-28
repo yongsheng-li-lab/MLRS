@@ -49,7 +49,7 @@ getTumorLR_ST <- function(st_count,st_metadata,ligand_receptor_DB,python_path,ou
                                      random_iter = 500,
                                      gene_set_1 = select_ligands,
                                      gene_set_2 = select_receptors)
-  visium = createSpatialNetwork(gobject = visium, minimum_k = 2, maximum_distance_delaunay = 400)
+  visium = createSpatialNetwork(gobject = visium, minimum_k = 2, maximum_distance_delaunay = "auto")
   spatial_all_scores = spatCellCellcom(visium,
                                        spatial_network_name = 'Delaunay_network',
                                        cluster_column = 'cell_type',
